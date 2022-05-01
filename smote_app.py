@@ -16,7 +16,7 @@ def process_ads_upload(): #Create File
         st.write(file_details)
 
         ADS_df = pd.read_csv(uploaded_file) #Read in Encoded ADS
-
+        ADS_df.fillna(0.0, inplace = True)
         X = ADS_df.drop('Result', axis=1) #Drop result column and take all other columns in the table as the variable set
         y = ADS_df['Result'] #Use result as the target column
 
